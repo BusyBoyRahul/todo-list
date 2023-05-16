@@ -8,3 +8,7 @@
 .newtxt{
     font-family: 'Lexend', sans-serif;
 }
+
+.btn:active{
+    transform: scale(0.9);
+}
