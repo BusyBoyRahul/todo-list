@@ -34,7 +34,7 @@ function Home() {
           // alert("Registered Successfully");
           navigate("/");
         })
-        .catch((err) => console.log(err.message));
+        .catch((err) => {console.log(err.message); alert(err.message);});
       console.log(title);
     };
   }
@@ -47,7 +47,7 @@ function Home() {
       setDataz(response.data.reverse());
 
     })
-    .catch((err) => console.log(err.message));
+    .catch((err) => {console.log(err.message); alert(err.message);});
 
 
   const deleterecord = (del) => {
@@ -58,7 +58,7 @@ function Home() {
           //   window.location.reload();
           navigate("/");
         })
-        .catch((err) => console.log(err.message));
+        .catch((err) => {console.log(err.message); alert(err.message);});
     }
   };
 
@@ -81,11 +81,11 @@ function Home() {
           // alert("Registered Successfully");
           navigate("/");
         })
-        .catch((err) => console.log(err.message));
+        .catch((err) => {console.log(err.message); alert(err.message);});
       console.log(title);
           // navigate("/");
         })
-        .catch((err) => console.log(err.message));
+        .catch((err) => {console.log(err.message); alert(err.message);});
     // axios.put(`https://64620fde185dd9877e4a080a.mockapi.io/api/v1/todo/${id}`, {
     //   id: id,
     //   title: title,
