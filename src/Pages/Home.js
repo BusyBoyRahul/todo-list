@@ -121,7 +121,7 @@ function Home() {
               <div className="container-fluid d-lg-flex m-lg-4 mt-3 justify-space-around border shadow rounded" >
                 <div className="text-start w-75">
                   <h2>{item.title}</h2>
-                  <p className="text-wrap newtxt" style={{ width: "80%", overflowX: "hidden" }}>{item.description}</p>
+                  <p className="text-wrap newtxt" style={{ width: "90%" }}>{item.description}</p>
                 </div>
                 <div className=" ms-lg-auto">
                   <button onClick={() => { setEdit(item.title); setEdit2(item.description); setId(item.id) }} className="btn btn-info text-end text-light fs-4 m-3" data-bs-toggle="modal" data-bs-target="#exampleModal"><RiFileEditFill /></button>
