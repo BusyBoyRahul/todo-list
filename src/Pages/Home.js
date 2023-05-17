@@ -44,7 +44,7 @@ function Home() {
   axios.get("https://64620fde185dd9877e4a080a.mockapi.io/api/v1/todo")
     .then((response) => {
       console.log(response.data);
-      setDataz(response.data);
+      setDataz(response.data.reverse());
 
     })
     .catch((err) => console.log(err.message));
@@ -68,15 +68,33 @@ function Home() {
 
   const editrecord = (id, title, description) => {
 
-    axios.put(`https://64620fde185dd9877e4a080a.mockapi.io/api/v1/todo/${id}`, {
-      id: id,
-      title: title,
-      description: description,
-    }).then((res) => {
+    axios
+        .delete(`https://64620fde185dd9877e4a080a.mockapi.io/api/v1/todo/${id}`)
+        .then((res) => {
+          axios
+        .post("https://64620fde185dd9877e4a080a.mockapi.io/api/v1/todo", {
+          title: title,
+          description: description,
+        })
+        .then((response) => {
+          console.log("success");
+          // alert("Registered Successfully");
+          navigate("/");
+        })
+        .catch((err) => console.log(err.message));
+      console.log(title);
+          // navigate("/");
+        })
+        .catch((err) => console.log(err.message));
+    // axios.put(`https://64620fde185dd9877e4a080a.mockapi.io/api/v1/todo/${id}`, {
+    //   id: id,
+    //   title: title,
+    //   description: description,
+    // }).then((res) => {
 
-      navigate("/");
-    })
-      .catch((err) => console.log(err.message));
+    //   navigate("/");
+    // })
+    //   .catch((err) => console.log(err.message));
 
   }
 
