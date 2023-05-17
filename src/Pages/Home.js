@@ -84,7 +84,7 @@ function Home() {
 
   return (
     <>
-      <div className="container text-center">
+      <div className="container text-center main">
         <h1 className="text-center mt-4">To-Do-List</h1>
         <form className="m-lg-5 mx-auto justify-content-center" onSubmit={handleSubmit}>
 
