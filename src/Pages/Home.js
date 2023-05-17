@@ -47,7 +47,7 @@ function Home() {
       setDataz(response.data.reverse());
 
     })
-    .catch((err) => {console.log(err.message); alert(err.message);});
+    .catch((err) => console.log(err.message));
 
 
   const deleterecord = (del) => {
