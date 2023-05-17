@@ -86,13 +86,13 @@ function Home() {
     <>
       <div className="container text-center main">
         <h1 className="text-center mt-4">To-Do-List</h1>
-        <form className="m-lg-5 mx-auto justify-content-center" onSubmit={handleSubmit}>
+        <form className="m-lg-5 m-auto justify-content-center text-center" onSubmit={handleSubmit}>
 
 
           <input
             id="title"
             type="text"
-            className="form-control my-lg-2 m-2 newtxt"
+            className="form-control my-lg-2 m-lg-2 mt-2 newtxt"
             placeholder="Title"
             onChange={(e) => setTitle(e.target.value)}
           />
@@ -101,20 +101,20 @@ function Home() {
           <input
             id="description"
             type="text"
-            className="form-control my-lg-2 m-2 newtxt"
+            className="form-control my-lg-2 m-lg-2 mt-2 newtxt"
             style={{ height: "60px", }}
             placeholder="Description"
             onChange={(e) => setDescription(e.target.value)}
           />
 
-          <button type="submit" className="btn btn-info fs-5 text-light">
+          <button type="submit" className="btn btn-info fs-5 mt-2 text-light">
             Add <HiDocumentAdd />
           </button>
         </form>
 
 
 
-        <div className="containerms-lg-5 me-lg-5 mt-4">
+        <div className="container pt-4">
           {dataz.map((item) => {
             return (
 
