@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { HiDocumentAdd } from 'react-icons/hi';
 import { RiFileEditFill } from 'react-icons/ri';
 import { AiFillDelete } from 'react-icons/ai';
@@ -10,7 +10,7 @@ import { AiFillDelete } from 'react-icons/ai';
 function Home() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  let navigate = useNavigate();
+ // let navigate = useNavigate();
 
 
 
@@ -31,16 +31,17 @@ function Home() {
           setTitle("");
           setDescription("");
 
-          // alert("Registered Successfully");
-          navigate("/");
+          window.location.reload();
+          //navigate("/");
         })
         .catch((err) => {console.log(err.message); alert(err.message);});
       console.log(title);
     };
   }
 
-
+  
   const [dataz, setDataz] = useState([]);
+  useEffect(() => {
   axios.get("https://64620fde185dd9877e4a080a.mockapi.io/api/v1/todo")
     .then((response) => {
       console.log(response.data);
@@ -48,6 +49,7 @@ function Home() {
 
     })
     .catch((err) => console.log(err.message));
+    }, []);
 
 
   const deleterecord = (del) => {
@@ -55,8 +57,8 @@ function Home() {
       axios
         .delete(`https://64620fde185dd9877e4a080a.mockapi.io/api/v1/todo/${del}`)
         .then((res) => {
-          //   window.location.reload();
-          navigate("/");
+          window.location.reload();
+          // navigate("/");
         })
         .catch((err) => {console.log(err.message); alert(err.message);});
     }
@@ -78,23 +80,14 @@ function Home() {
         })
         .then((response) => {
           console.log("success");
-          // alert("Registered Successfully");
-          navigate("/");
+          window.location.reload();
+          // navigate("/");
         })
         .catch((err) => {console.log(err.message); alert(err.message);});
       console.log(title);
           // navigate("/");
         })
         .catch((err) => {console.log(err.message); alert(err.message);});
-    // axios.put(`https://64620fde185dd9877e4a080a.mockapi.io/api/v1/todo/${id}`, {
-    //   id: id,
-    //   title: title,
-    //   description: description,
-    // }).then((res) => {
-
-    //   navigate("/");
-    // })
-    //   .catch((err) => console.log(err.message));
 
   }
 
