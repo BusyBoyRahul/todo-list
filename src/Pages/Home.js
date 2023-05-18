@@ -51,7 +51,7 @@ function Home() {
 
 
   const deleterecord = (del) => {
-    if (window.confirm("DO YOU REALLY WANT TO DELETE THIS CODE.")) {
+    if (window.confirm("DO YOU REALLY WANT TO DELETE THIS LIST.")) {
       axios
         .delete(`https://64620fde185dd9877e4a080a.mockapi.io/api/v1/todo/${del}`)
         .then((res) => {
@@ -165,7 +165,7 @@ function Home() {
                           value={Edit2}
                           type="text"
                           className="form-control my-lg-2 m-2 newtxt"
-                          placeholder="Title"
+                          placeholder="Description"
                           onChange={(e) => setEdit2(e.target.value)}
                         />
                       </div>
