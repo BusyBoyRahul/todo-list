@@ -8,8 +8,57 @@
 
 .newtxt{
     font-family: 'Lexend', sans-serif;
+    
 }
 
 .btn:active{
     transform: scale(0.9);
 }
+
+
+.button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: .3s;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .svgIcon {
+    width: 25px;
+    transition-duration: .3s;
+  }
+  
+  .button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: .3s;
+    align-items: center;
+  }
+  
+  .button:hover .svgIcon {
+    width: 50px;
+    transition-duration: .3s;
+    transform: translateY(70%);
+  }
+  
+  .button::before {
+    position: absolute;
+    top: -20px;
+    content: "Add";
+    color: white;
+    transition-duration: .3s;
+    font-size: 10px;
+  }
+  
+  .button:hover::before {
+    font-size: 25px;
+    opacity: 1;
+    transform: translateY(20px);
+    transition-duration: .3s;
+  }

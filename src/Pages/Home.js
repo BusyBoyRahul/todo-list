@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
+ import { useNavigate } from "react-router-dom";
 import { HiDocumentAdd } from 'react-icons/hi';
 import { RiFileEditFill } from 'react-icons/ri';
 import { AiFillDelete } from 'react-icons/ai';
@@ -10,7 +10,7 @@ import { AiFillDelete } from 'react-icons/ai';
 function Home() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
- // let navigate = useNavigate();
+  let navigate = useNavigate();
 
 
 
@@ -31,8 +31,8 @@ function Home() {
           setTitle("");
           setDescription("");
 
-          window.location.reload();
-          //navigate("/");
+          //window.location.reload();
+          navigate("/");
         })
         .catch((err) => {console.log(err.message); alert(err.message);});
       console.log(title);
@@ -95,7 +95,7 @@ function Home() {
 
   return (
     <>
-      <div className="container text-center main">
+      <div className="container text-center main " >
         <h1 className="text-center mt-4">To-Do-List</h1>
         <form className="m-lg-5 m-auto justify-content-center text-center" onSubmit={handleSubmit}>
 
@@ -118,8 +118,8 @@ function Home() {
             onChange={(e) => setDescription(e.target.value)}
           />
 
-          <button type="submit" className="btn btn-info fs-5 mt-2 text-light">
-            Add <HiDocumentAdd />
+          <button type="submit" className="btn bg-info button fs-5 mt-2 text-light">
+           <HiDocumentAdd  class="svgIcon" />
           </button>
         </form>
 
@@ -135,8 +135,8 @@ function Home() {
                   <p className="text-wrap newtxt" style={{ width: "100%" }}>{item.description}</p>
                 </div>
                 <div className=" ms-lg-auto">
-                  <button onClick={() => { setEdit(item.title); setEdit2(item.description); setId(item.id) }} className="btn btn-info text-end text-light fs-4 m-3" data-bs-toggle="modal" data-bs-target="#exampleModal"><RiFileEditFill /></button>
-                  <button onClick={() => deleterecord(item.id)} className="btn btn-info text-end text-light fs-4 m-3"><AiFillDelete /></button>
+                  <button onClick={() => { setEdit(item.title); setEdit2(item.description); setId(item.id) }} className="btn btn-info rounded-circle text-end text-light fs-4 m-3" data-bs-toggle="modal" data-bs-target="#exampleModal"><RiFileEditFill /></button>
+                  <button onClick={() => deleterecord(item.id)} className="btn btn-info rounded-circle text-end text-light fs-4 m-3"><AiFillDelete /></button>
                 </div>
 
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -164,7 +164,7 @@ function Home() {
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onClick={() => editrecord(id, Edit, Edit2)} >Save changes</button>
+                        <button type="button" class="btn btn-primary rounded-circle" data-bs-dismiss="modal" onClick={() => editrecord(id, Edit, Edit2)} >Save changes</button>
                       </div>
                     </div>
                   </div>
